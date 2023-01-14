@@ -1,5 +1,6 @@
 export interface RootState {
   articles: Article[],
+  isLoading: boolean,
 }
 
 export interface Article {
