@@ -1,6 +1,8 @@
 export interface RootState {
   articles: Article[],
   isLoading: boolean,
+  keyWords: string[],
+  currentQuery: string,
 }
 
 export interface Article {
