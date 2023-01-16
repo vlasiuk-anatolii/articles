@@ -37,14 +37,14 @@ export const HomePage: React.FC = () => {
   const handleClickButton = () => {
     dispatch(loadArticles(currentQuery));
   }
-  
+
   const handleChange = (event: { target: { value: string; }; }) => {
     const { value } = event.target;
     dispatch(setKeyWords(value.trimEnd().split(' ')));
-    dispatch(loadArticles(currentQuery));
   }
 
-  const handleClickEnter = (event: { key: string; }) => {
+  const handleClickEnter = (event: { preventDefault: () => void; key: string; }) => {
+    event.preventDefault();
     if (event.key === 'Enter') {
       dispatch(loadArticles(currentQuery));
     }
@@ -66,7 +66,7 @@ export const HomePage: React.FC = () => {
     if(!checkedTitle && !checkedSummary) {
       dispatch(setCurrentQuery(''));
     }
-  }, [checkedTitle, checkedSummary, dispatch, queryTitle, querySummary])
+  }, [checkedTitle, checkedSummary, dispatch, queryTitle, querySummary]);
 
   return (
     <>
@@ -89,7 +89,6 @@ export const HomePage: React.FC = () => {
           </Typography>
   
           <Paper
-            component="form"
             sx={{
               p: '2px 4px',
               display: 'flex',
@@ -114,7 +113,7 @@ export const HomePage: React.FC = () => {
               placeholder="You should enter searching word and then press 'Enter'"
               inputProps={{ 'aria-label': 'Searchig words' }}
               onChange={handleChange}
-              onKeyDown={handleClickEnter}
+              onKeyUp={handleClickEnter}
             />
           </Paper>
           <Typography 
@@ -131,22 +130,24 @@ export const HomePage: React.FC = () => {
             {`Results: ${articles.length}`}
           </Typography>
           <Divider sx={{ m: '0 75px 45px', maxWidth: 1290 }} orientation="horizontal" variant='inset' />
-          <label htmlFor='title-checkbox' className='label-checkbox'>
-            <Checkbox
-              checked={checkedTitle}
-              onChange={handleChangeCheckboxTitle}
-              inputProps={{ 'aria-label': 'controlled' }}
-              id='title-checkbox'
-            /> Find in a title
-          </label>
-          <label htmlFor='summary-checkbox'>
-            <Checkbox
-              checked={checkedSummary}
-              onChange={handleChangeCheckboxSummary}
-              inputProps={{ 'aria-label': 'controlled' }}
-              id='summary-checkbox'
-            /> Find in an article
-          </label>
+          <Box className='label-checkbox'>
+            <label htmlFor='title-checkbox'>
+              <Checkbox
+                checked={checkedTitle}
+                onChange={handleChangeCheckboxTitle}
+                inputProps={{ 'aria-label': 'controlled' }}
+                id='title-checkbox'
+              /> Find in a title
+            </label>
+            <label htmlFor='summary-checkbox'>
+              <Checkbox
+                checked={checkedSummary}
+                onChange={handleChangeCheckboxSummary}
+                inputProps={{ 'aria-label': 'controlled' }}
+                id='summary-checkbox'
+              /> Find in an article
+            </label>
+          </Box>
         </ThemeProvider>
 
         <Box

@@ -46,8 +46,6 @@ export const Blank: React.FC<Props> = ({
   const summaryTrimed = useTrim(summary, 100);
   const keyWords = useSelector(getKeyWordsSelector);
   const allParams = keyWords.join('|').replace(/\|+/g, '|');
-  console.log(allParams);
-  console.log('pioslya', keyWords);
   const re = new RegExp(`${allParams}`, 'i')
 
   const lighting = (str: string) => {

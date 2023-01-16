@@ -9,6 +9,7 @@ export const useQuery = (arr: string[], chapter: string ) => {
   result = result.replace(/&$/, '');
   if (arr.length > 0) {
     return `?${result}`;
-  }
-  return '';
+  } else {
+    return '';
+  } 
 };
