@@ -1,6 +1,6 @@
 <br/>
 <p align="center">
-  <img src="images-readme/logo.jpg" alt="Logo" width="80" height="80">
+  <img src="images-readme/logo-articles.jpg" alt="Logo" width="80" height="80">
 
   <h3 align="center">Articles</h3>
 
