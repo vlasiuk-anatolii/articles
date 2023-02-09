@@ -24,23 +24,23 @@
 
 By default the application has an opportunity find articles by keywords in titles of articles.
 
-![Screen Shot1](images-readme/Screenshot_1.jpg)
+![Screen Shot1](images-readme/screenshot_1.jpg)
 
 User can choose finding mode by checkbox 'Find in a title', 'Find in an articles' and both modes together.
 
-![Screen Shot3](images-readme/Screenshot_4.jpg)
+![Screen Shot3](images-readme/screenshot_4.jpg)
 
-![Screen Shot4](images-readme/Screenshot_5.jpg)
+![Screen Shot4](images-readme/screenshot_5.jpg)
 
 Found items are highlighted yellow color.
 
-![Screen Shot2](images-readme/Screenshot_3.jpg)
+![Screen Shot2](images-readme/screenshot_3.jpg)
 
 After typing keywords user should press left button
-![Screen Shot6](images-readme/Screenshot_6.jpg)
+![Screen Shot6](images-readme/screenshot_6.jpg)
 or press "Enter" after typing. Then cards will displayed on HomePage. There are cards with article titles and descriptions for 100 characters. The user can click on the card to go to an article page that contains the title and full description of the selected article.
 
-![Screen Shot7](images-readme/Screenshot_7.jpg)
+![Screen Shot7](images-readme/screenshot_7.jpg)
 
 The aplication is adapted to all devices.
 
